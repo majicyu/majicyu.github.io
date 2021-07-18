@@ -177,4 +177,4 @@ polybar的设置非常多样化，大家可以去官网看一看官方教程
 
 i3wm的进一步使用也建议直接进官网查看
 
-最后附上本人配置文件大家可以参考https://github.com/majicyu/.config
+最后附上本人配置文件https://github.com/majicyu/.config

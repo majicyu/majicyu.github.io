@@ -238,7 +238,7 @@
 <h3 id="1-5、下载图片查看器feh"><a href="#1-5、下载图片查看器feh" class="headerlink" title="1-5、下载图片查看器feh"></a>1-5、下载图片查看器feh</h3><p><code>sudo pacman -S feh</code></p>
 <h3 id="1-6、下载状态栏polybar"><a href="#1-6、下载状态栏polybar" class="headerlink" title="1-6、下载状态栏polybar"></a>1-6、下载状态栏polybar</h3><p><code>sudo pacman -S polybar</code></p>
 <h3 id="1-7、下载截图软件flameshot"><a href="#1-7、下载截图软件flameshot" class="headerlink" title="1-7、下载截图软件flameshot"></a>1-7、下载截图软件flameshot</h3><p><code>sudo pacman -S flameshot</code></p>
-<h2 id="2、软件配置"><a href="#2、软件配置" class="headerlink" title="2、软件配置"></a>2、软件配置</h2><h2 id="2-1、i3配置"><a href="#2-1、i3配置" class="headerlink" title="2-1、i3配置"></a>2-1、i3配置</h2><p>重启后选择<strong>i3</strong>桌面，两次选择都直接按<strong>Enter</strong>继续，进桌面以后按<strong>win + Enter</strong>打开终端，<strong>win + d</strong>打开dmenu，输入<strong>firefox</strong>可以打开浏览器</p>
+<h2 id="2、软件配置"><a href="#2、软件配置" class="headerlink" title="2、软件配置"></a>2、软件配置</h2><h3 id="2-1、i3配置"><a href="#2-1、i3配置" class="headerlink" title="2-1、i3配置"></a>2-1、i3配置</h3><p>重启后选择<strong>i3</strong>桌面，两次选择都直接按<strong>Enter</strong>继续，进桌面以后按<strong>win + Enter</strong>打开终端，<strong>win + d</strong>打开dmenu，输入<strong>firefox</strong>可以打开浏览器</p>
 <p>首先查看自己的i3默认配置文件</p>
 <p><code>cd /usr/share/doc/i3/</code></p>
 <p><code>ls</code></p>
@@ -262,7 +262,7 @@
 <p>截图软件<strong>flameshot</strong>设置</p>
 <p><code>bindsym Print --release  exec /usr/bin/flameshot gui</code></p>
 <p><code>for_window [class=&quot;flameshot&quot;] floating enable</code></p>
-<h2 id="2-2、alacritty的配置设置"><a href="#2-2、alacritty的配置设置" class="headerlink" title="2-2、alacritty的配置设置"></a>2-2、alacritty的配置设置</h2><p>进入<strong>alacritty</strong>配置文件(与i3配置文件类似，若.config目录下没有alacritty目录则自己创建，并把默认配置文件复制过来)</p>
+<h3 id="2-2、alacritty的配置设置"><a href="#2-2、alacritty的配置设置" class="headerlink" title="2-2、alacritty的配置设置"></a>2-2、alacritty的配置设置</h3><p>进入<strong>alacritty</strong>配置文件(与i3配置文件类似，若.config目录下没有alacritty目录则自己创建，并把默认配置文件复制过来)</p>
 <p><code>cd ~/.config</code></p>
 <p><code>mkdir alacritty</code></p>
 <p><code>cp /usr/share/doc/alacritty/alacritty.yml ./alacritty.yml</code></p>
@@ -271,12 +271,12 @@
 <p>将配置文件中的<strong>font</strong>中的<strong>family</strong>改为<strong>Source Code Pro</strong></p>
 <p>以及将背景不透明度改为你自己喜欢的值</p>
 <p><code>background_opacity:0.5</code></p>
-<h2 id="2-3、picom的配置"><a href="#2-3、picom的配置" class="headerlink" title="2-3、picom的配置"></a>2-3、picom的配置</h2><p>与上面相似，复制文件/usr/share/doc/picom/picom.conf.example到.config目录下的picom目录(没有目录自己创建一个)</p>
+<h3 id="2-3、picom的配置"><a href="#2-3、picom的配置" class="headerlink" title="2-3、picom的配置"></a>2-3、picom的配置</h3><p>与上面相似，复制文件/usr/share/doc/picom/picom.conf.example到.config目录下的picom目录(没有目录自己创建一个)</p>
 <p><code>nano picom.conf</code></p>
 <p><code>inactive-opacity = 0.7</code></p>
 <p><code>active-opacity = 0.9</code></p>
 <p>设置活动窗口的不透明度基本可以了</p>
-<h2 id="2-4、polybar的配置"><a href="#2-4、polybar的配置" class="headerlink" title="2-4、polybar的配置"></a>2-4、polybar的配置</h2><p>打开i3的配置文件</p>
+<h3 id="2-4、polybar的配置"><a href="#2-4、polybar的配置" class="headerlink" title="2-4、polybar的配置"></a>2-4、polybar的配置</h3><p>打开i3的配置文件</p>
 <p>将配置文件最底下的i3bar配置注释</p>
 <p><code>#bar &#123;</code></p>
 <p><code>#...</code></p>
@@ -291,7 +291,7 @@
 <p>然后在<strong>i3配置文件</strong>中加入以下内容</p>
 <p><code>exec --no-startup-id ~/.config/polybar/launch.sh</code></p>
 <p>重启后就能看到polybar的默认状态了(win + shift + r可以直接重启i3不需要重启整个linux)</p>
-<h2 id="2-5、flameshot"><a href="#2-5、flameshot" class="headerlink" title="2-5、flameshot"></a>2-5、flameshot</h2><p>需要截图直接在终端使用</p>
+<h3 id="2-5、flameshot"><a href="#2-5、flameshot" class="headerlink" title="2-5、flameshot"></a>2-5、flameshot</h3><p>需要截图直接在终端使用</p>
 <p><code>flameshot gui</code></p>
 <h2 id="3、常见问题"><a href="#3、常见问题" class="headerlink" title="3、常见问题"></a>3、常见问题</h2><p>vm虚拟机可能会遇到分辨率问题或者其他问题，如果遇到以上一些软件的设置问题建议直接bing搜索软件名称进入官网查看文档，或者直接去archwiki查看相关软件基本配置，或者github的相关软件的wiki界面均可。</p>
 <p>polybar的设置非常多样化，大家可以去官网看一看官方教程</p>
@@ -302,6 +302,13 @@
             <hr>
             <div>
               <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Manjaro/">Manjaro</a>
+                    
+                  </div>
                 
                 
                   <div class="post-meta">

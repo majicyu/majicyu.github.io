@@ -1,7 +1,7 @@
 ---
 title: Manjaro install i3wm
 date: 2021-07-18 21:37:38
-index_img: /img/i3wm.png
+index_img: https://raw.githubusercontent.com/majicyu/PicGoBed/main/img/20210711221519750.png
 tags: [Manjaro,i3wm,Linux]
 categories: Manjaro
 ---

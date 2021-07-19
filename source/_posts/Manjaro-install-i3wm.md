@@ -16,7 +16,6 @@ categories: Manjaro
 
 ![还行吧](https://raw.githubusercontent.com/majicyu/PicGoBed/main/img/20210711221519750.png)
 
-
 ## 1、安装软件
 
 ### 1-1、下载i3wm

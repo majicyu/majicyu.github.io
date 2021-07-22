@@ -8,7 +8,7 @@
     <link href="/2021/07/21/how-to-make-a-tinyhttpd/"/>
     <url>/2021/07/21/how-to-make-a-tinyhttpd/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>最近在寻找项目时看到了一关于TinyHttpd的介绍，于是自己就去GitHub上找了找，然后试着运行了一下。</p><h1 id="Manjaro下运行tinyhttpd"><a href="#Manjaro下运行tinyhttpd" class="headerlink" title="Manjaro下运行tinyhttpd"></a>Manjaro下运行tinyhttpd</h1><h2 id="1、事前准备"><a href="#1、事前准备" class="headerlink" title="1、事前准备"></a>1、事前准备</h2><h3 id="1-1：-从GitHub下载项目"><a href="#1-1：-从GitHub下载项目" class="headerlink" title="1-1： 从GitHub下载项目"></a>1-1： 从GitHub下载项目</h3><p><code>git clone https://github.com/cbsheng/tinyhttpd.git </code>(这是一份对新手更加友好的多注释版本)</p><h3 id="1-2：-若下载运行时，出现-no-cgi-module错误，需要先安装CGI-。同时htdocs下的两个-cgi文件的！-usr-bin-local-perl改为-usr-bin-perl-若是local文件夹下无文件时，需要更改否则无需更改"><a href="#1-2：-若下载运行时，出现-no-cgi-module错误，需要先安装CGI-。同时htdocs下的两个-cgi文件的！-usr-bin-local-perl改为-usr-bin-perl-若是local文件夹下无文件时，需要更改否则无需更改" class="headerlink" title="1-2： 若下载运行时，出现 no cgi module错误，需要先安装CGI 。同时htdocs下的两个.cgi文件的！#/usr/bin/local/perl改为!#/usr/bin/perl(若是local文件夹下无文件时，需要更改否则无需更改)"></a>1-2： 若下载运行时，出现 no cgi module错误，需要先安装CGI 。同时htdocs下的两个.cgi文件的<code>！#/usr/bin/local/perl</code>改为<code>!#/usr/bin/perl</code>(若是local文件夹下无文件时，需要更改否则无需更改)</h3><p>可以先运行<code>perl -v</code>查看Perl版本，然后输入<code>perl -MCPAN -e shell</code></p><p>此时会出现CPAN的安装确认，输入<code>yes</code>即可</p><p>最后在CPAN下，输入<code>install CGI</code>,到此为止项目应该可以正常运行且返回页面</p><h2 id="2、原理解析"><a href="#2、原理解析" class="headerlink" title="2、原理解析"></a>2、原理解析</h2>]]></content>
     
     
     <categories>

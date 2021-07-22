@@ -3,8 +3,8 @@ title: how to make a tinyhttpd
 date: 2021-07-21 22:59:39
 tags: [C++,Linux,HTTP]
 categories: HTTP
-index_img: /img/http.png
-banner_img: /img/http.png
+index_img: /img/httpd.png
+banner_img: /img/httpd.png
 ---
 最近在寻找项目时看到了一关于TinyHttpd的介绍，于是自己就去GitHub上找了找，然后试着运行了一下。
 

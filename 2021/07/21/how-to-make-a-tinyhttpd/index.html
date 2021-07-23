@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      208 字
+      444 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      5
        分钟
     </span>
   
@@ -229,11 +229,13 @@
             
             <div class="markdown-body">
               <p>最近在寻找项目时看到了一关于TinyHttpd的介绍，于是自己就去GitHub上找了找，然后试着运行了一下。</p>
-<h1 id="Manjaro下运行tinyhttpd"><a href="#Manjaro下运行tinyhttpd" class="headerlink" title="Manjaro下运行tinyhttpd"></a>Manjaro下运行tinyhttpd</h1><h2 id="1、事前准备"><a href="#1、事前准备" class="headerlink" title="1、事前准备"></a>1、事前准备</h2><h3 id="1-1：-从GitHub下载项目"><a href="#1-1：-从GitHub下载项目" class="headerlink" title="1-1： 从GitHub下载项目"></a>1-1： 从GitHub下载项目</h3><p><code>git clone https://github.com/cbsheng/tinyhttpd.git </code>(这是一份对新手更加友好的多注释版本)</p>
+<h1 id="Manjaro下运行tinyhttpd"><a href="#Manjaro下运行tinyhttpd" class="headerlink" title="Manjaro下运行tinyhttpd"></a>Manjaro下运行tinyhttpd</h1><h2 id="1、事前准备"><a href="#1、事前准备" class="headerlink" title="1、事前准备"></a>1、事前准备</h2><h3 id="1-1：从GitHub下载项目"><a href="#1-1：从GitHub下载项目" class="headerlink" title="1-1：从GitHub下载项目"></a>1-1：从GitHub下载项目</h3><p><code>git clone https://github.com/cbsheng/tinyhttpd.git </code>(这是一份对新手更加友好的多注释版本)</p>
 <h3 id="1-2：-若下载运行时，出现-no-cgi-module错误，需要先安装CGI-。同时htdocs下的两个-cgi文件的！-usr-bin-local-perl改为-usr-bin-perl-若是local文件夹下无文件时，需要更改否则无需更改"><a href="#1-2：-若下载运行时，出现-no-cgi-module错误，需要先安装CGI-。同时htdocs下的两个-cgi文件的！-usr-bin-local-perl改为-usr-bin-perl-若是local文件夹下无文件时，需要更改否则无需更改" class="headerlink" title="1-2： 若下载运行时，出现 no cgi module错误，需要先安装CGI 。同时htdocs下的两个.cgi文件的！#/usr/bin/local/perl改为!#/usr/bin/perl(若是local文件夹下无文件时，需要更改否则无需更改)"></a>1-2： 若下载运行时，出现 no cgi module错误，需要先安装CGI 。同时htdocs下的两个.cgi文件的<code>！#/usr/bin/local/perl</code>改为<code>!#/usr/bin/perl</code>(若是local文件夹下无文件时，需要更改否则无需更改)</h3><p>可以先运行<code>perl -v</code>查看Perl版本，然后输入<code>perl -MCPAN -e shell</code></p>
 <p>此时会出现CPAN的安装确认，输入<code>yes</code>即可</p>
 <p>最后在CPAN下，输入<code>install CGI</code>,到此为止项目应该可以正常运行且返回页面</p>
-<h2 id="2、原理解析"><a href="#2、原理解析" class="headerlink" title="2、原理解析"></a>2、原理解析</h2>
+<h2 id="2、原理解析"><a href="#2、原理解析" class="headerlink" title="2、原理解析"></a>2、原理解析</h2><p><img src="/img/picture.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="2-1：建立套接字，确定端口号和ip地址等"><a href="#2-1：建立套接字，确定端口号和ip地址等" class="headerlink" title="2-1：建立套接字，确定端口号和ip地址等"></a>2-1：建立套接字，确定端口号和ip地址等</h3><h3 id="2-2：监听请求"><a href="#2-2：监听请求" class="headerlink" title="2-2：监听请求"></a>2-2：监听请求</h3><h3 id="2-3：读取HTTP请求行信息，确定请求方法GET-or-POST"><a href="#2-3：读取HTTP请求行信息，确定请求方法GET-or-POST" class="headerlink" title="2-3：读取HTTP请求行信息，确定请求方法GET or POST"></a>2-3：读取HTTP请求行信息，确定请求方法GET or POST</h3><h3 id="2-4：若是GET方法且不带传送的数据，则返回所请求的文件（文件部委可执行文件）（或者默认index-html）文件"><a href="#2-4：若是GET方法且不带传送的数据，则返回所请求的文件（文件部委可执行文件）（或者默认index-html）文件" class="headerlink" title="2-4：若是GET方法且不带传送的数据，则返回所请求的文件（文件部委可执行文件）（或者默认index.html）文件"></a>2-4：若是GET方法且不带传送的数据，则返回所请求的文件（文件部委可执行文件）（或者默认index.html）文件</h3><h3 id="2-5：-若是GET方法带传送的数据或POST方法，则运行CGI程序"><a href="#2-5：-若是GET方法带传送的数据或POST方法，则运行CGI程序" class="headerlink" title="2-5： 若是GET方法带传送的数据或POST方法，则运行CGI程序"></a>2-5： 若是GET方法带传送的数据或POST方法，则运行CGI程序</h3><h3 id="2-6：GET方法读取内容并忽略请求剩下的内容"><a href="#2-6：GET方法读取内容并忽略请求剩下的内容" class="headerlink" title="2-6：GET方法读取内容并忽略请求剩下的内容"></a>2-6：GET方法读取内容并忽略请求剩下的内容</h3><h3 id="2-7：若是POST读取到Content-Length，若长度存在则返回状态码200"><a href="#2-7：若是POST读取到Content-Length，若长度存在则返回状态码200" class="headerlink" title="2-7：若是POST读取到Content-Length，若长度存在则返回状态码200"></a>2-7：若是POST读取到Content-Length，若长度存在则返回状态码200</h3><h3 id="2-8：建立两个管道用于进程间通信"><a href="#2-8：建立两个管道用于进程间通信" class="headerlink" title="2-8：建立两个管道用于进程间通信"></a>2-8：建立两个管道用于进程间通信</h3><h3 id="2-9：子进程中将标准输出重定向到写端，标准输入重定向到读端"><a href="#2-9：子进程中将标准输出重定向到写端，标准输入重定向到读端" class="headerlink" title="2-9：子进程中将标准输出重定向到写端，标准输入重定向到读端"></a>2-9：子进程中将标准输出重定向到写端，标准输入重定向到读端</h3><h3 id="2-10：父进程关闭写端和读端，若是POST方法，将body中内容写入管道，让子进程读取。从管道中读取子进程的输出，发送到客户端，关闭管道。"><a href="#2-10：父进程关闭写端和读端，若是POST方法，将body中内容写入管道，让子进程读取。从管道中读取子进程的输出，发送到客户端，关闭管道。" class="headerlink" title="2-10：父进程关闭写端和读端，若是POST方法，将body中内容写入管道，让子进程读取。从管道中读取子进程的输出，发送到客户端，关闭管道。"></a>2-10：父进程关闭写端和读端，若是POST方法，将body中内容写入管道，让子进程读取。从管道中读取子进程的输出，发送到客户端，关闭管道。</h3><p><img src="/img/httpdDetail.png" srcset="/img/loading.gif" lazyload></p>
+
             </div>
             <hr>
             <div>

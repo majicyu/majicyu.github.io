@@ -8,6 +8,8 @@ banner_img: /img/httpd.png
 ---
 最近在寻找项目时看到了一关于TinyHttpd的介绍，于是自己就去GitHub上找了找，然后试着运行了一下。
 
+<!-- more -->
+
 # Manjaro下运行tinyhttpd
 
 ## 1、事前准备

@@ -9,6 +9,8 @@ categories: Manjaro
 
 由于本人是在vmware workstation pro15下安装的Manjaro Xfce桌面，所以可能与部分用户配置步骤和配置软件并不完全相同，具体情况大家可以去Arch Wiki查看或者直接查看相关软件的文档
 
+<!-- more -->
+
 # Manjaro下安装及美化i3wm
 
 
